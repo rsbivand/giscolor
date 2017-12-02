@@ -51,7 +51,7 @@ function(name, pal, n=NA, zlim=NA) {
       newcol <- newcol[seq(1, length(newcol), length=n)]
       thispal <- data.frame(value=newval, pct=FALSE, color=newcol, stringsAsFactors=FALSE)
     }
-
+    
     # GRASS colortables can have duplicated values to indicate discontinuities
     # don't treat value and percent as one group
     thispal$value[duplicated(thispal$value)] <- thispal$value[duplicated(thispal$value)] + abs(max(thispal$value))*0.000001
